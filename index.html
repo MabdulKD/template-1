@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- aos js -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- lightgallery -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" integrity="sha512-F2E+YYE1gkt0T5TVajAslgDfTEUQKtlu4ralVq78ViNxhKXQLrgQLLie8u1tVdG2vWnB3ute4hcdbiBtvJQh0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-autoplay.min.css" integrity="sha512-LlHSkMTvyRwh1YjzXwk6bxjdt3huGhCyK1vlCC6f7Db/g+2sYXz2YNasyZHnMUgykqPksmD/44DIINhqpWBjig==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-fullscreen.min.css" integrity="sha512-JlgW3xkdBcsdFiSfFk5Cfj3sTgo3hA63/lPmZ4SXJegICSLcH43BuwDNlC9fqoUy2h3Tma8Eo48xlZ5XMjM+aQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-zoom.min.css" integrity="sha512-vIrTyLijDDcUJrQGs1jduUCSVa3+A2DaWpVfNyj4lmXkqURVQJ8LL62nebC388QV3P4yFBSt/ViDX8LRW0U6uw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- splide js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    
+    <!-- me css -->
+    <link rel="stylesheet" href="style.css">
+    <title>template2</title>
+</head>
+<body class="scrool" id="Scrool">
+    
+    <!-- audio website -->
+    <audio id="popup-music" src="Nothings Gonna Change My Love For You  George Benson Wedding Version Lyric Video  Mild Nawin (mp3cut.net).mp3" loop></audio>
+   
+    <!-- popup cover -->
+    <div id="popup" class="popup">
+        <div class="atas">
+            <p>undangan pernikahan</p>
+            <h1>febri & perempuan</h1>
+        </div>
+        <div class="bawah">
+            <p>kepada Yth :</p>
+            <h2>Tamu Undangan!</h2>
+            <button id="closeButton">buka undangan</button>
+        </div>
+    </div>
+
+    <!-- music controler -->
+    <div id="music-controls" style="display: none;">
+        <button id="play-pause-btn">
+        <i class="fas fa-volume-up fa-lg"></i>
+        <i class="fas fa-volume-mute fa-lg"></i>
+        </button>
+    </div>
+
+
+
+    <!-- show content JS -->
+    <div id="mainContent" class="main-content">
+
+    </div>
+    <!-- hero section -->
+    <div class="hero-section" id="heroSection">
+        <img src="img/cincin.png" data-aos="fade-up" data-aos-duration="2000">
+        <h1 data-aos="fade-down" data-aos-duration="2000">febri & perempuan</h1>
+        <a href="#" class="buttonClass" data-aos="zoom-out" data-aos-duration="2000">ARE GETTING MARRIED</a>
+    </div>
+    <div class="countdown">
+        <section class='FlexContainer' data-aos="zoom-in" data-aos-duration="2000">
+            <div class="save">
+                <h2>save <br> the date</h2>
+            </div>
+            <div>
+                <p id="days">00</p>
+                <p class="ket">day</p>
+            </div>
+            <div>
+                <p id="hours">00</p>
+                <p class="ket">hours</p>
+            </div>
+            <div>
+                <p id="minutes">00</p>
+                <p class="ket">minutes</p>
+            </div>
+            <div>
+                <p id="seconds">00</p>
+                <p class="ket">seconds</p>
+            </div>
+        </section>
+    </div>
+    <div class="about" data-aos="fade-down" data-aos-duration="2000">
+        <h5>about bridge & groom</h5>
+        <h1>bridge & groom</h1>
+    </div>
+    <div class="groom">
+        <div class="name" data-aos="zoom-in" data-aos-duration="2000">
+            <h2>febri haryadi</h2>
+            <p>putra pertama dari pasangan</p>
+            <p>bapak febri &</p>
+            <p>ibu febri haryadi</p>
+            <img src="img/burung-removebg-preview.png" width="80px" >
+        </div>
+        <div class="foto" data-aos="fade-right" data-aos-duration="3000"> 
+            <img src="img/bridge-removebg-preview.png">
+        </div>
+    </div>
+    <div class="bridge">
+        <div class="foto" data-aos="fade-left" data-aos-duration="3000">
+            <img src="img/groom-removebg-preview.png">
+        </div>
+        <div class="name" data-aos="zoom-in" data-aos-duration="2000">
+            <h2>perempuan</h2>
+            <p>putri pertama dari pasangan</p>
+            <p>bapak febri &</p>
+            <p>ibu febri haryadi</p>
+            <img src="img/burung-removebg-preview.png" width="80px">
+        </div>
+    </div>
+    <div class="story">
+        <div class="about" data-aos="fade-down" data-aos-duration="2000">
+            <h5>love story</h5>
+            <h1>timeline of love</h1>
+        </div>
+        <div class="timeline1">
+            <div class="left">
+                <div class="kotak1" data-aos="fade-left" data-aos-duration="3000">
+                    <div class="kotak2">
+                        <div class="kotak3">
+                            <div class="kotak4">
+                                <img src="img/burung-removebg-preview.png">
+                                <h4>june 2023 08 .00</h4>
+                                <h2>Love story in fallin in love</h2>
+                                <p class="desk">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum at inventore sunt veniam quas. Iusto praesentium voluptatibus eligendi?</p> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-object" data-aos="zoom-in" data-aos-duration="2000">
+                    <img src="img/cincin.png" alt="cincin" width="80">
+                </div>
+            </div>
+        </div>
+        <div class="timeline2">
+            <div class="right">
+                <div class="timeline-object" data-aos="zoom-in" data-aos-duration="2000">
+                    <img src="img/cincin.png" alt="cincin" width="80">
+                </div>
+                <div class="kotak1" data-aos="fade-right" data-aos-duration="3000">
+                    <div class="kotak2">
+                        <div class="kotak3">
+                            <div class="kotak4">
+                                <img src="img/burung-removebg-preview.png">
+                                <h4>june 2023 08 .00</h4>
+                                <h2>Love story in fallin in love</h2>
+                                <p class="desk">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum at inventore sunt veniam quas. Iusto praesentium voluptatibus eligendi? </p> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="timeline1">
+            <div class="left">
+                <div class="kotak1" data-aos="fade-left" data-aos-duration="3000">
+                    <div class="kotak2">
+                        <div class="kotak3">
+                            <div class="kotak4">
+                                <img src="img/burung-removebg-preview.png">
+                                <h4>june 2023 08 .00</h4>
+                                <h2>Love story in fallin in love</h2>
+                                <p class="desk">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum at inventore sunt veniam quas. Iusto praesentium voluptatibus eligendi? </p> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-object" data-aos="zoom-in" data-aos-duration="2000">
+                    <img src="img/cincin.png" alt="cincin" width="80">
+                </div>
+            </div>
+        </div>
+        <div class="timeline2">
+            <div class="right">
+                <div class="timeline-object" data-aos="zoom-in" data-aos-duration="2000">
+                    <img src="img/cincin.png" alt="cincin" width="80">
+                </div>
+                <div class="kotak1" data-aos="fade-right" data-aos-duration="3000">
+                    <div class="kotak2">
+                        <div class="kotak3">
+                            <div class="kotak4">
+                                <img src="img/burung-removebg-preview.png">
+                                <h4>june 2023 08 .00</h4>
+                                <h2>Love story in fallin in love</h2>
+                                <p class="desk">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum at inventore sunt veniam quas. Iusto praesentium voluptatibus eligendi?</p> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tamu-undangan">
+        <div class="about" data-aos="zoom-in" data-aos-duration="2000">
+            <h5>tamu undanga</h5>
+            <h1>keluarga & teman</h1>
+        </div>
+        <div class="container-tamu" data-aos="zoom-in" data-aos-duration="2000">
+            <div class="daftar-tamu">
+                <div class="splide">
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            <div class="splide__slide">
+                                <div class="img_box">
+                                    <img src="img/unsplash__HIlJ_popSQ.png" alt="gl1">
+                                </div>
+                            </div>
+                            <div class="splide__slide">
+                                <div class="img_box">
+                                    <img src="img/al-elmes-ULHxWq8reao-unsplash.jpg" alt="gl1">
+                                </div>
+                            </div>
+                            <div class="splide__slide">
+                                <div class="img_box">
+                                    <img src="img/nathan-dumlao-H_cZqryUuok-unsplash.jpg" alt="gl1">
+                                </div>
+                            </div>
+                            <div class="splide__slide">
+                                <div class="img_box">
+                                    <img src="img/jeongim-kwon-sqWzP97H_bo-unsplash.jpg" alt="gl1">
+                                </div>
+                            </div>
+                            <div class="splide__slide">
+                                <div class="img_box">
+                                    <img src="img/vadim-paripa-tEFItLGn0uc-unsplash.jpg" alt="gl1">
+                                </div>
+                            </div>
+                            <div class="splide__slide">
+                                <div class="img_box">
+                                    <img src="img/evelina-friman-hw_sKmjb0ns-unsplash.jpg" alt="gl1">
+                                </div>
+                            </div>
+                            <div class="splide__slide">
+                                <div class="img_box">
+                                    <img src="img/sinitta-leunen-dS87qokCAC4-unsplash.jpg" alt="gl1">
+                                </div>
+                            </div>
+                            <div class="splide__slide">
+                                <div class="img_box">
+                                    <img src="img/victoria-priessnitz-MMNgGsFEbuI-unsplash.jpg" alt="gl1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="acara">
+        <div class="maps-wrapper" data-aos="zoom-in" data-aos-duration="2000">
+            <div class="maps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5114118920383!2d107.59628707429304!3d-6.94883936802678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e89569ffdb69%3A0x6c9a53530e0d0d8e!2sBandung%20Convention%20Centre!5e0!3m2!1sen!2sid!4v1686194513040!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="kapan-dimana">
+            <div class="about" data-aos="zoom-in" data-aos-duration="2000">
+                <h5>acara</h5>
+                <h1>kapan dan dimana</h1>
+            </div>
+            <div class="akad-resepsi">
+                <div class="akad" data-aos="zoom-in" data-aos-duration="2000">
+                    <img src="img/cincin.png" alt="cincin" width="50px" height="50px">
+                    <h2>akad nikah</h2>
+                    <p>senin, 20 maret 2024</p>
+                    <p>pukul 08.30-10.00 wib</p>
+                    <p><b>gedung serbaguna bandung convention center</b></p>
+                    <button><a href="" class="buka">buka maps</a></button>
+                </div>
+                <div class="resepsi" data-aos="zoom-in" data-aos-duration="2000">
+                    <img src="img/cincin.png" alt="cincin" width="50px" height="50px">
+                    <h2>resepsi</h2>
+                    <p>senin, 20 maret 2024</p>
+                    <p>pukul 08.30-10.00 wib</p>
+                    <p><b>gedung serbaguna bandung convention center</b></p>
+                    <button><a href="" class="buka">buka maps</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rsvp">
+        <div class="rsvp-wrapper">
+            <div class="about" data-aos="zoom-in" data-aos-duration="2000">
+                <h5>acara</h5>
+                <h1>apakah akan hadir</h1>
+            </div>
+            <div class="daftar-hadir"data-aos="zoom-in" data-aos-duration="2000">
+                <form class="form-rsvp">
+                    <label for="fname">Nama kamu</label>
+                    <input type="text" id="fname" name="fname">
+                    <label for="lname">No Handphone</label>
+                    <input type="text" id="lname" name="lname">
+                    <label for="country">Jumlah Tamu</label>
+                    <select id="country" name="country">
+                        <option value="australia"></option>
+                        <option value="canada">1 Orang</option>
+                        <option value="usa">2 Orang</option>
+                        <option value="usa">3 Orang</option>
+                        <option value="usa">4 Orang</option>
+                    </select>
+                    <form>
+                        <textarea>Tulis Pesan</textarea>
+                    </form>
+                    <input type="button" value="Kirim RSVP">
+                </form>
+            </div>
+            
+        </div>
+    </div>
+    <div class="about" data-aos="zoom-in" data-aos-duration="2000">
+        <h5>galeri</h5>
+        <h1>galeri foto</h1>
+    </div>
+    <div class="galeri-wrapper" data-aos="zoom-in" data-aos-duration="2000">
+        <div class="galeri" id="galeri">
+            <a href="img/unsplash__HIlJ_popSQ.png">
+                <img alt="" src="img/unsplash__HIlJ_popSQ.png" />
+            </a>
+            <a href="img/rsvp bg.png">
+                <img alt="" src="img/rsvp bg.png" />
+            </a>
+            <a href="img/al-elmes-ULHxWq8reao-unsplash.jpg">
+                <img src="img/al-elmes-ULHxWq8reao-unsplash.jpg" alt="">
+            </a> 
+            <a href="img/nathan-dumlao-H_cZqryUuok-unsplash.jpg">
+                <img src="img/nathan-dumlao-H_cZqryUuok-unsplash.jpg" alt="">
+            </a>
+            <a href="img/jeongim-kwon-sqWzP97H_bo-unsplash.jpg">
+                <img src="img/jeongim-kwon-sqWzP97H_bo-unsplash.jpg" alt="">
+            </a>
+            <a href="img/vadim-paripa-tEFItLGn0uc-unsplash.jpg" >
+                <img src="img/vadim-paripa-tEFItLGn0uc-unsplash.jpg" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="terimakasih" data-aos="zoom-in" data-aos-duration="2000">
+        <div class="about">
+            <h5>terima kasih</h5>
+            <h1>febri & perempuan</h1>
+            <img src="img/burung-removebg-preview.png" width="80px">
+        </div><br><br><br>
+    </div>   
+    <div class="footer">
+        <p>&copy; 2023 touch_in.com, all right reserved</p><br>
+        <a href=""><i class="fa-brands fa-instagram fa-lg"></i></a> 
+        <a href=""><i class="fa-brands fa-facebook fa-lg"></i></a>
+        <a href=""><i class="fa-brands fa-github fa-lg"></i></i></a>
+    </div>
+
+<!-- back to top -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"/></svg>
+</button>
+<!-- scrool to top -->
+<script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 2000 || document.documentElement.scrollTop > 2000) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+</script>
+
+<!-- lightgalleryJS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/autoplay/lg-autoplay.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/fullscreen/lg-fullscreen.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js" integrity="sha512-BfC/MaayF9sOZyn1bs1R1P8dEugU7v0j5Qu2FeWVfF/rhKUKZBD9kgNqRNinefIp9zAE7g2KhlwwhMpl5V1jMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- splideJS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>   
+    <script>
+        var splide = new Splide( '.splide', {
+        perPage: 5,
+        gap    : '.5rem',
+        perMove : '1',
+        padding : '3rem',
+        autoplay : true,
+        type : 'loop',
+        
+        breakpoints: {
+            1115: {
+                perPage: 4,
+            },
+            950: {
+                perPage: 3,
+            },
+            768: {
+                perPage: 3,
+                gap: '1rem',
+            },
+            640: {
+            perPage: 2,
+            gap    : '1.2rem',
+            },
+            480: {
+            perPage: 1,
+            gap    : '.7rem',
+            },
+            450: {
+            perPage: 1,
+            gap    : '.1rem',
+            },
+        },
+        } );
+
+        splide.mount();
+    </script> 
+
+<!-- lightgalleryJS -->
+    <script>
+        lightGallery(document.getElementById('galeri'), {
+            plugins: [lgAutoplay, lgFullscreen, lgZoom],
+        });
+    </script>
+    
+    <!-- countdown -->
+    <script>
+        var countDownDate = new Date("June 16, 2023 00:00:00").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+        }, 1000);
+
+    </script>
+
+    <!-- data aos -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init(); // Mengaktifkan kembali animasi AOS
+    </script>
+
+    <!-- popup -->
+    <script>
+        // Mendapatkan elemen popup dan tombol tutup
+        var popup = document.getElementById('popup');
+        var closeButton = document.getElementById('closeButton');
+        var mainContent = document.getElementById('mainContent');
+        var hidenScrool = document.getElementById('Scrool');
+
+         // Mengambil nilai parameter "nama" dari URL
+         var urlParams = new URLSearchParams(window.location.search);
+        var nama = urlParams.get('nama');
+        
+        // Memperbarui teks h1 dengan nilai "nama" dari URL
+        var h1 = popup.querySelector('h2');
+        h1.textContent = nama ? nama : "Selamat datang!";
+
+        // Menampilkan popup saat halaman dimuat
+        window.addEventListener('load', function() {
+          popup.classList.add('active');
+          hidenScrool.classList.add('active');
+        });
+
+        // Menutup popup saat tombol tutup diklik
+        closeButton.addEventListener('click', function() {
+          popup.classList.add('hide');
+          hidenScrool.classList.add('show');
+          mainContent.classList.add('show');
+         
+          setTimeout(function() {
+            popup.style.display = 'none';
+          }, 1500);
+        });
+        
+    </script>  
+
+<!-- script audio -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var popup = document.getElementById('popup');
+        var closeButton = document.getElementById('closeButton');
+        var playPauseButton = document.getElementById('play-pause-btn');
+        var popupMusic = document.getElementById('popup-music');
+        var musicControls = document.getElementById('music-controls');
+
+
+        // Menutup popup dan menampilkan tombol Play saat tombol ditutup diklik
+        closeButton.addEventListener('click', function() {
+        popup.classList.add('hide');
+        musicControls.style.display = 'block';
+        playPauseButton.querySelector('.fa-volume-up').style.display = 'inline';
+        playPauseButton.querySelector('.fa-volume-mute').style.display = 'none';
+        popupMusic.play();
+        });
+
+        // Memainkan atau memberhentikan musik saat tombol Play/Pause diklik
+        playPauseButton.addEventListener('click', function() {
+        if (popupMusic.paused) {
+            popupMusic.play();
+            playPauseButton.querySelector('.fa-volume-mute').style.display = 'none';
+            playPauseButton.querySelector('.fa-volume-up').style.display = 'inline';
+        } else {
+            popupMusic.pause();
+            playPauseButton.querySelector('.fa-volume-mute').style.display = 'inline';
+            playPauseButton.querySelector('.fa-volume-up').style.display = 'none';
+        }
+        });
+
+});
+
+    </script>
+
+
+</body>
+</html>

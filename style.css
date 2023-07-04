@@ -1,0 +1,782 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Outfit&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Rochester&display=swap');
+
+  html {
+    scroll-behavior: smooth;
+}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  background-color: #F9F5F6;
+}
+body.scrool.active {
+  overflow: hidden;
+}
+body.scrool.show {
+  overflow: auto;
+}
+/* popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 1;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.popup.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 9999;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background: url(img/5849602_3034713.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.popup.hide {
+  transform: translate(-50%, -250%);
+  opacity: 0;
+}
+.popup h1, .popup h2, .popup p {
+  color: #fff;
+}
+.popup .atas p {
+  font-size: small;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: 'Outfit', sans-serif;
+}
+.popup .atas h1 {
+  font-size: 7vw;
+  text-transform: capitalize;
+  font-weight: 400;
+  text-shadow: #474747 1px 1px 1px;
+}
+.popup .bawah {
+  margin-top: 180px;
+}
+.popup .bawah p {
+  font-size: small;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Outfit', sans-serif;
+}
+.popup .bawah h2 {
+  margin: 20px;
+  text-transform: uppercase;
+  font-family: 'Outfit', sans-serif;
+}
+.popup #closeButton {
+  font-family: 'Outfit', sans-serif;
+  padding: 10px 20px 10px 20px;
+  list-style: none;
+  color: #F2BED1;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border: none;
+  cursor: pointer;
+  border-color:#dcdcdc;
+  background:#ffffff;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px #e4b1b1;
+}
+
+.main-content {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.main-content.show {
+  opacity: 1;
+}
+#music-controls {
+  font-size: 14px;
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  border: none;
+  /* border-radius: 50%; */
+  outline: none;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+  opacity: .5;
+  z-index: 99;
+  }
+
+/* Gaya tombol */
+#play-pause-btn {
+  background-color: #F2BED1;
+  width: 50px;
+  height: 50px;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
+}
+/* font */
+.hero-section h1, .FlexContainer .save h2, .FlexContainer #days, #hours, #minutes, #seconds, .popup .atas h1 {
+    font-family: 'Rochester' ,cursive;
+    text-transform: capitalize;
+    color: #fff;
+}
+.hero-section {
+    width: 100%;
+    height: 100vh;
+    background: url(img/5849602_3034713.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+.hero-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero-section img {
+    width: 100px;
+    margin-top: 80px;
+    opacity: 80%;
+}
+.hero-section h1 {
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 7vw;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-shadow: #474747 1px 1px 1px;
+}
+.buttonClass {
+    font-size:15px;
+    padding: 10px 30px;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 5px;
+    width:200px;
+    height:80px;
+    color:#F2BED1;
+    border-color:#dcdcdc;
+    background:#ffffff;
+    text-decoration: none;
+  }
+  .buttonClass:hover {
+    background: #f6f6f6
+  }
+  .countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-top: -30px;
+}
+.FlexContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 80%;
+    background-color: #F2BED1;
+    overflow: auto;
+    flex-direction: row;
+    color: #fff;
+    border-style: dashed; 
+    border-width: 1px;
+    outline: 0.5em solid #F2BED1; 
+
+}
+.FlexContainer .save {
+  background-color: #d386a2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.FlexContainer .save h2{
+  font-weight: 400;
+  font-size: 30px;
+}
+.FlexContainer div {
+    width: 250px;
+    height: 120px;
+    display: flex;
+    text-transform: capitalize;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.FlexContainer p#days, p#hours, p#minutes, p#seconds {
+  font-size: 30px;
+}
+.FlexContainer p .ket{
+  font-size: 12px;
+  font-family: 'Outfit', sans-serif;
+
+}
+#days, #hours, #minutes, #seconds {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about {
+  margin-top: 50px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about h5 {
+  width: 280px;
+  height: 32px;
+  border-style: dashed;
+  color: #d386a2;
+  padding: 7px;
+  border-width: 1px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.about h1 {
+  margin-top: 20px;
+  font-family: 'Rochester' ,cursive;
+  text-transform: capitalize;
+  color: #d386a2;
+  font-weight: 400;
+  font-size: 78px;
+}
+.groom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 78px;
+}
+.name {
+  margin-right: 100px;
+}
+.name h2 {
+  font-weight: 400;
+  font-size: 56px;
+  font-family: 'Rochester' ,cursive;
+  text-transform: capitalize;
+  color: #F2BED1;
+}
+.name p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 2px;
+  /* text-align: center; */
+  text-transform: capitalize;
+  color: #a7a0a0;
+  padding: 5px;
+  text-align: right;
+  font-size: 17px;
+}
+.name img {
+  margin-top: 50px;
+  position: relative;
+  left: 220px;
+}
+.foto img {
+  width: 90%;
+  border: 10px solid #F2BED1;
+}
+.bridge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 78px;
+}
+.bridge .name{
+  margin-left: 100px;
+}
+.story {
+  background: url('img/unsplash__HIlJ_popSQ.png');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+.timeline1 {
+  display: flex;  margin-top: 30px;
+
+}
+.timeline2 {
+  display: flex;
+  justify-content: end;
+}
+.left {
+  width: 53%;
+  display: flex;
+  justify-content: end;
+}
+.right {
+  width: 53%;
+  display: flex;
+  justify-content: baseline;
+}
+.kotak1 {
+  background-color: #F2BED1;
+  width: 63%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 10px;
+}
+.kotak2 {
+  background-color: transparent;
+  width: 100%;
+  border: dashed;
+  color: white;
+  border-width: 1px;
+  rotate: -1deg;
+}
+.kotak3 {
+  background-color: transparent;
+  width: 100%;
+  border: dashed;
+  color: white;
+  border-width: 1px;
+  rotate: 2deg;
+}
+.kotak4 {
+  background-color: transparent;
+  width: 100%;
+  margin: 5px;
+  rotate: -1.2deg;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.kotak4 h2, h4, p.desk{
+  text-align: right;
+  margin: 20px 20px 10px 0px;
+  bottom: 60px;
+}
+.kotak4 img {
+  opacity: 0.2;
+  background-color: #fff;
+  width: 20%;
+  border-radius: 50%;
+  justify-content: end;
+
+}
+.container-tamu {
+  display: flex;
+  justify-content: center;
+}
+.daftar-tamu {
+  width: 85%;
+}
+.splide {
+  margin: 80px 50px 0px 50px;
+}
+.img_box img{
+  width: 150px;
+  height: 150px;
+  border: 10px solid #F2BED1;
+}
+.splide__pagination {
+  bottom: -4rem;
+}
+.splide__pagination__page.is-active {
+  opacity: 1;
+  background-color: #d386a2;
+}
+.acara {
+  display: flex;
+  margin-top: 145px;
+  background-color: #d386a2;
+  justify-content: center;
+  padding: 50px 0px 80px 0px;
+}
+.maps-wrapper {
+  /* background-color: aqua; */
+  width: 35%;
+  display: flex;
+  justify-content: end;
+}
+.maps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin-bottom: -30px;
+  /* background-color: #a7a0a0; */
+}
+a.buka {
+  text-decoration: none;
+  color: #d386a2;
+}
+.kapan-dimana {
+  width: 60%;
+}
+.kapan-dimana .about h5, .kapan-dimana .about h1, .akad, .resepsi{
+  color: #fff;
+}
+.kapan-dimana .about {
+  margin-top: 0px;
+}
+.kapan-dimana .about h1{
+  font-size: 65px;
+}
+.akad-resepsi {
+  display: flex;
+  justify-content: center;
+  
+}
+.akad, .resepsi {
+  width: 40%;
+  /* background-color: #a7a0a0; */
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.akad h2, .resepsi h2 {
+  padding: 20px;
+}
+.akad p, .resepsi p {
+  padding: 7px;
+  opacity: 0.5;
+}
+.akad button, .resepsi button {
+  margin-top: 15px;
+  padding: 10px 30px 10px 30px;
+  background-color: #fff;
+  color: #d386a2;
+  border-style: none;
+  text-transform: uppercase;
+}
+.rsvp {
+  width: 100%;
+  height: 100vh;
+  background: url(img/rsvp\ bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: baseline;
+}
+.rsvp-wrapper {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.rsvp .about {
+  margin-top: 0px;
+}
+.rsvp .about h1 {
+  font-size: 50px;
+}
+.rsvp .about h1, .rsvp .about h5 {
+  color: #fff;
+}
+.daftar-hadir {
+  width: 80%;
+  margin: 20px 0px 0px 80px;
+}
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #d386a2;
+  background: transparent;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+select option {
+  margin: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+input[type=text]:focus {
+  border-style: none;
+  outline: none;
+}
+input[type=button] {
+  background-color: #d386a2;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.form-rsvp label {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #fff;
+  font-size: 12px;
+}
+.galeri-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.galeri {
+  transition: all .2s linear;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+.galeri a {
+  width: 300px;
+  height: 200px;
+  margin: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 2px #474747;
+}
+.galeri a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.galeri a img:hover {
+  transform: scale(1.3);
+}
+.terimakasih {
+  width: 100%;
+  margin-top: 100px;
+}
+.footer {
+  width: 100%;
+  height: 87px;
+  background-color: #F2BED1 ;
+  text-align: center;
+}
+.footer p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(109, 103, 103);
+  padding-top: 18px;
+}
+.footer a {
+  padding: 10px;
+}
+#myBtn {
+  display: none; 
+  position: fixed; 
+  bottom: 20px; 
+  right: 30px; 
+  z-index: 99; 
+  border: none; 
+  outline: none;
+  cursor: pointer; 
+  background-color: transparent;
+  opacity: .5;
+  }
+      
+  #myBtn:hover {
+  opacity: .8; /* Add a dark-grey background on hover */
+  }
+
+/* media screen responsive */
+@media only screen 
+   and (max-width : 965px) {
+    .acara {
+      flex-direction: column;
+    }
+    .maps-wrapper {
+      width: 100%;
+      justify-content: center;
+    }
+    .kapan-dimana {
+      width: 100%;
+    }
+    .maps {
+      margin-bottom: 0px;
+    }
+   }
+  @media only screen 
+   and (max-width : 768px) {
+    .hero-section img{
+        width: 75px;
+    }
+   .hero-section h1{
+    font-size: 60px;
+   }
+   .buttonClass {
+    font-size: 12px;
+   }
+   .about h1 {
+    font-size: 50px;
+   }
+   .name {
+    margin: 20px;
+   }
+   .name h2 {
+    font-size: 45px;
+    text-align: center;
+   }
+   .name p {
+    text-align: center;
+    font-size: 14px;
+   }
+   .name img {
+    left: -0px;
+    margin-top: 30px;
+   }
+   .groom {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 30px;
+   }
+   .bridge {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   }
+   .bridge .name{
+    margin-left: 30px;
+  }
+  .left {
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: center;
+  }
+  .right {
+    width: 100%;
+    justify-content: center;
+  }
+  .kotak4 h2, h4, p.desk {
+    text-align: left;
+  }
+  .splide {
+    margin: 50px 50px 0px 50px;
+  }
+  .acara {
+    flex-direction: column;
+  }
+  .maps-wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+  .maps {
+    margin-bottom: 0px;
+  }
+  .kapan-dimana .about h1{
+    font-size: 50px;
+  }
+  .rsvp-wrapper {
+    width: 100%;
+  }
+  .daftar-hadir {
+    margin: 20px;
+  }
+
+}
+
+@media only screen 
+   and (max-width : 450px) {
+    .popup {
+      opacity: 1;
+      position: absolute;
+      transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+    }
+    .popup .atas h1 {
+      font-size: 50px;
+    } 
+    .popup .bawah h2 {
+      font-size: medium;
+    }
+    .countdown {
+      margin-top: -80px;
+    }
+    .FlexContainer{
+      flex-direction: column;
+      width: auto;
+    }
+    .FlexContainer div {
+      height: 78px;
+      width: 350px;
+    }
+    .daftar-tamu {
+      width: 100%;
+    }
+    .img_box img{
+      width: 200px;
+      height: 200px;
+    }
+    .splide {
+      margin: 50px 50px 0px 50px;
+    }
+    .kapan-dimana .about h1{
+      font-size: 40px;
+    }
+    .about h1 {
+      font-size: 40px;
+    }
+    .akad-resepsi {
+      flex-direction: column;
+      padding: 20px;
+    }
+    .akad, .resepsi {
+      width: 100%;
+      padding: 0px 10px 50px 10px;
+    }
+    .rsvp .about h1 {
+      font-size: 40px;
+    }
+
+
+   }
+@media only screen 
+   and (max-width : 320px) {
+    .hero-section img {
+        width: 60px;
+       }
+    .hero-section h1{
+        font-size: 40px;
+       }
+       .buttonClass {
+        font-size: 12px;
+        padding: 8px 30px;
+        letter-spacing: 2px;
+      }
+      .FlexContainer{
+        flex-direction: column;
+        width: auto;
+      }
+      .FlexContainer div {
+        height: 78px;
+        width: 250px;
+      }
+      .about h5 {
+        width: 210px;
+        font-size: 10px;
+        padding-top: 9px;
+      }
+      .img_box img{
+        width: 250px;
+        height: 250px;
+      }
+      .splide {
+        margin: 50px 50px 0px 50px;
+      }
+     
+}
+                
