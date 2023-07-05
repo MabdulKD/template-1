@@ -24,7 +24,7 @@
     
     <!-- me css -->
     <link rel="stylesheet" href="style.css">
-    <title>template2</title>
+    <title>template 1</title>
 </head>
 <body class="scrool" id="Scrool">
     
@@ -294,23 +294,24 @@
                 <form class="form-rsvp">
                     <label for="fname">Nama kamu</label>
                     <input type="text" id="fname" name="fname">
+                    
                     <label for="lname">No Handphone</label>
                     <input type="text" id="lname" name="lname">
+                    
                     <label for="country">Jumlah Tamu</label>
                     <select id="country" name="country">
-                        <option value="australia"></option>
-                        <option value="canada">1 Orang</option>
-                        <option value="usa">2 Orang</option>
-                        <option value="usa">3 Orang</option>
-                        <option value="usa">4 Orang</option>
+                        <option value="1">1 Orang</option>
+                        <option value="2">2 Orang</option>
+                        <option value="3">3 Orang</option>
+                        <option value="4">4 Orang</option>
                     </select>
-                    <form>
-                        <textarea>Tulis Pesan</textarea>
-                    </form>
-                    <input type="button" value="Kirim RSVP">
+                    
+                    <label for="pesan">Tulis Pesan</label>
+                    <textarea id="pesan" name="pesan"></textarea>
+                    
+                    <input type="button" value="Kirim RSVP" onclick="sendToWhatsApp()">
                 </form>
-            </div>
-            
+            </div>   
         </div>
     </div>
     <div class="about" data-aos="zoom-in" data-aos-duration="2000">
@@ -496,6 +497,33 @@
         });
         
     </script>  
+
+    <!-- form whatsapp -->
+    <script>
+        function sendToWhatsApp() {
+            var nama = document.getElementById("fname").value;
+            var no_hp = document.getElementById("lname").value;
+            var jumlah_tamu = document.getElementById("country").value;
+            var pesan = document.getElementById("pesan").value;
+        
+            var nomor_telepon = "085220623851"; // Ganti dengan nomor telepon tujuan
+            var pesan_whatsapp = "Halo, saya RSVP dari " + nama + ". Jumlah tamu: " + jumlah_tamu + ". Pesan: " + pesan;
+        
+            var url_whatsapp = "https://api.whatsapp.com/send?phone=" + nomor_telepon + "&text=" + encodeURIComponent(pesan_whatsapp);
+        
+            window.open(url_whatsapp); // Membuka WhatsApp di jendela baru
+            disableForm(); // Menonaktifkan form
+        }
+        
+        function disableForm() {
+            var form = document.getElementsByClassName("form-rsvp")[0];
+            var elements = form.elements;
+        
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].disabled = true;
+            }
+        }
+    </script>
 
 <!-- script audio -->
     <script>
